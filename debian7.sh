@@ -205,11 +205,11 @@ service squid3 restart
 
 # install webmin
 cd
-#wget https://www.dropbox.com/s/9vbc213hm4lnlkc/webmin_1.690_all.deb
-wget -O webmin-current.deb "http://www.webmin.com/download/deb/webmin-current.deb"
-dpkg -i --force-all webmin-current.deb;
+wget "http://prdownloads.sourceforge.net/webadmin/webmin_1.820_all.deb"
+dpkg --install webmin_1.820_all.deb;
 apt-get -y -f install;
-rm /root/webmin-current.deb
+rm /root/webmin_1.820_all.deb
+sed -i 's/ssl=1/ssl=0/g' /etc/webmin/miniserv.conf
 service webmin restart
 service vnstat restart
 
