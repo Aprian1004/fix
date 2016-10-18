@@ -6,7 +6,7 @@
 Login=trial-`</dev/urandom tr -dc X-Z0-9 | head -c4`
 mumetndase="1"
 Pass=`</dev/urandom tr -dc X-Z0-9 | head -c4`
-IP=`ifconfig venet0:0| awk 'NR==2 {print $2}'| awk -F: '{print $2}'`
+IP=$(ifconfig | grep 'inet addr:' | grep -v inet6 | grep -vE '127\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}' | cut -d: -f2 | awk '{ print $1}' | head -1)
 useradd -e `date -d "$mumetndase days" +"%Y-%m-%d"` -s /bin/false -M $Login
 echo "-----------------------------------------------------"
 echo "          AKUN TRIAL TELAH DIBUAT              "
