@@ -1,11 +1,11 @@
 while :
  do 
-  ./userlimit.sh 1 
+  userlimit 1 
   sleep 5 
   done
 while :
   do
-  ./userlimit.sh 2
+  userlimit 2
   sleep 55 
   done
 while :
