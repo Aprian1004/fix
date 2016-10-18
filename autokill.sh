@@ -6,7 +6,7 @@ while :
 while :
   do
   userlimit 2
-  sleep 55 
+  sleep 5
   done
 while :
   do
