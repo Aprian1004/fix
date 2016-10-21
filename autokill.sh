@@ -1,5 +1,5 @@
-while : 
-do 
-userlmt 2 
-sleep 10 
+while :
+do
+user-limit 2
+sleep 5
 done
